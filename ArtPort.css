@@ -31,37 +31,47 @@ html, body {
         display: block;
         margin: 0 auto;
     }
-    .Main-dresser {
-      width: fit-content;
-      max-width: 65%;
-      max-height: fit-content;
-      display: block;
+
+    /* This is the container for all of the draw images */
+    #draw {
       margin: 0 auto;
+      max-width: 800px;
+      position: relative;
+      width: 65%;
+    }
+
+    .Main-dresser,
+    .Draw-closed,
+    .Draw-opened {
+      height: auto;
+      margin: 0;
+      width: 100%;
+    }
+
+    .Main-dresser {
+      display: block;
       position: relative;
     }
 
-    #draw {
+    .Draw-closed,
+    .Draw-opened {
         position: absolute;
-        top: 63%; 
-        left: 15%; 
+        top: 48%; 
+        left: 0; 
         z-index: 2;
         background-color: pink;
   
     }
 
     .Draw-closed {
-        width: fit-content;
-        max-width: 65%;
-        max-height: fit-content;
         display: block;
-        margin: 0 auto;
     }
+
     .Draw-opened {
-        width: fit-content;
-        max-width: 55%;
-        max-height: fit-content;
         display: none;
-        margin: 0 auto;
+        left: 4%;
+        transform: rotate(-2deg);
+        width: 87%;
     }
 
     #draw.open .Draw-closed {
@@ -72,17 +82,20 @@ html, body {
         display: block;
     }
 
+
+
+
     .column {
       justify-content: center;
       align-items: center;
-      flex-direction: column;
-      float: left;
+      display: block;
+      margin-left: auto;
+      margin-right: auto;
       width: 10%;
       padding: 5px;
     }
     .row::after {
       justify-content: center;
-    align-items: center;
+      align-items: center;
       flex-direction:row; 
-      display: table;
     }
