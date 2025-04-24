@@ -5,19 +5,35 @@
         <link href="ArtPort.css" rel="stylesheet"/> 
     </head>
 
-
-
-
     <body>
-  
 
 
-        <img class="Main-Tv" src="images/mainscreenportfolio.png">
-        
-        <!-- #draw will be position: relative; in your CSS, not here-->
-        <div id="draw">
-            <img class="Main-dresser" src="images/Draw-closed.png"> 
-        
+    
+
+
+      <div id="character"> 
+        <img class="Main-Tv" src="images/mainscreenportfolio.png" usemap="#imageMap">
+        <map name="imageMap">
+          <area shape="rect" coords="20,300,90,120" href="https://discord.com/channels/729649530269728808/1336862214984040469"> 
+        </map>
+        <img class="character-inside" src="images/character-inside-tv(looking) .png"> 
+        <img class="character-active" src="images/char-welcome-page(active).png"> 
+      </div>
+
+        <div id="dresser">
+
+          <div id="top-draw">
+            <img class="Main-dresser" src="images/Draw-closed.png"  usemap="#imageMap"> 
+            <map name="imageMap">
+              <area shape="rect" coords="60,300,180,120" href="https://discord.com/channels/729649530269728808/1336862214984040469"> 
+            </map>
+          </div>
+      
+            
+          <!-- #draw will be position: relative; in your CSS, not here-->
+          <div id="bottom-draw">
+            <img class="dresser-lower" src="images/Draw-closed-lowerhalf.png"> 
+                
             <!-- These images will be position: absolute; in your CSS, not here-->
             <img class="Draw-closed" src="images/lowershelfclosed.png"> 
             <img class="Draw-opened" src="images/pulled-out-draw.png" usemap="#imageMap">
@@ -26,30 +42,27 @@
               <area shape="rect" coords="230,60,360,120" href="https://www.pinterest.com"> 
               <area shape="rect" coords="430,60,540,120" href="https://genshin.hoyoverse.com/en/gift"> 
             </map>
+          </div>
+
+          <img class="cat" src="images/cat-down.png" />
+
         </div>
 
-      
-
-       
-        
-
-
-
-          <div class="row">
-            <div class="column">
-              <img src="images/applejack.png">
-            </div>
-            <div class="column">
-              <img src="images/rainbowdash.png">
-            </div>
-            <div class="column">
-              <img src="images/fluttershy.png">
-            </div>
-            <div class="column">
-                <img src="images/pinkiepie.png">
-              </div>
+        <div id="moveable" style="top: 90px; left: 40px;">
+          <txt>
+             ~~~~~!!
+          <br> ~~~~~~~`
+          <br> 
+          <br> 
+          <br> 
+           !!!!
+          </txt>
           </div>
-       
+
+
+
+
+         
 
         <script src="ArtPort.js"></script>
     </body>
