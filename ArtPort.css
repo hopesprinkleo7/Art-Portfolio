@@ -25,19 +25,25 @@ html, body {
 
 #character {
      margin: 0 auto;
-      max-width: 900px;
+      max-width: 540px;
       position: relative;
-      width: 100%
+      width: 43.875%;
+      /* cursor: pointer; */
     }
+    /*
+    #character { 
+      cursor: pointer;
+    }
+    */
+    
     .Main-Tv {
         width: fit-content;
-        max-width: 65%;
         max-height: fit-content;
         display: block;
         margin: 0 auto;
         position: relative;
     }
-    .character-inside {
+    .character-inside  {
       position: absolute;
       z-index: -2;
       left: 23%;  
@@ -54,6 +60,19 @@ html, body {
       height: 65%;
      background-color: aquamarine;
      display: none;
+    }
+
+
+     .hover-speech {
+      position: absolute;
+      display: none; /* Hidden initially */
+    }
+    .character-inside:hover .hover-speech {
+      display: block; /* Show on hover */
+      width: 90px;
+      height: auto;
+      top: 0px;
+      left: 20%;
     }
      
 
@@ -100,6 +119,8 @@ html, body {
 
     .Draw-closed {
         display: block;
+        /* the numbers after the URL are your x and y offsets */
+        cursor: url("images/hand-openingcursor.pdf") 30 40, auto;
     }
 
     .Draw-opened {
@@ -107,12 +128,23 @@ html, body {
         left: 4%;
         transform: rotate(-2deg);
         width: 87%;
+        cursor: url("images/handclosingcursor.pdf") 30 40, auto; 
+          /* image needs to be like 800px800px MAX and pdf*/ 
+    }
+
+    .Draw-opened area {
+      cursor: wait;
+      display: block;
+    }
+    .Main-Tv area {
+      cursor: pointer; 
+      display: block;
     }
 
     #bottom-draw {
-      cursor: pointer;
+       cursor: url("images/hand-openingcursor.pdf"), auto
     }
-    
+
 
     #bottom-draw.open .Draw-closed {
         display: none;
@@ -121,7 +153,15 @@ html, body {
     #bottom-draw.open .Draw-opened {
         display: block;
     }
-
+.piggybank {
+  position: absolute;
+  max-width: 100px;
+  width: 20%;
+  bottom: 88%;
+  left: 10%;
+  z-index: 1;
+  cursor: url("images/money-cursor.pdf"), auto; 
+}
 .cat {
   position: absolute;
   max-width: 130px;
@@ -129,7 +169,7 @@ html, body {
   top: 0;
   left: 59%;
   z-index: 1;
-  cursor: pointer;
+  cursor: url("images/yarn-ball.pdf"), url("images/fish-cursor.pdf"), url("images/mouse-cusor.pdf"), auto; 
 }
 
 #moveable {
@@ -153,9 +193,12 @@ txt {
   left: 0;
   z-index: 10;
   display: flex;
-  align-items: center;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 5px;
   justify-content: center;
   /* min() lets you set two values for the same property and will always display at the smaller of the two. In your case using vw means it'll scale with the width of your screen until it reaches 18px, then will stay 18px */
-  font-size: min(2vw, 18px);
+  font-size: min(1.5vw, 24px);
   overflow: auto;
+  padding: 15%;
 }

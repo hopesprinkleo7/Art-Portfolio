@@ -15,11 +15,20 @@ function drawToggle() {
 character.addEventListener("click", characterToggle);
 bottomDraw.addEventListener("click", drawToggle);
 
+
 const cat = document.querySelector(".cat");
 function catAudio() {
   new Audio("kitten-meow-not-cute-purr-93405-clipped.mp3").play();
 }
 cat.addEventListener("click", catAudio);
+
+
+const piggybank = document.querySelector(".piggybank");
+function catAudio() {
+  new Audio("coin.mp3").play();
+}
+piggybank.addEventListener("click", catAudio);
+
 
 //Make the DIV element draggagle:
 dragElement(document.getElementById("moveable"));
