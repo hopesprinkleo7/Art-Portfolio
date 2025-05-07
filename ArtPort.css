@@ -132,9 +132,9 @@ html, body {
           /* image needs to be like 800px800px MAX and pdf*/ 
     }
 
-    .Draw-opened area {
+    .imageMap2 {
       display: block;
-      cursor: url("images/mouse-cusor.pdf"), wait; 
+      cursor: url('images/money-cursor.pdf') 8 8, auto; 
     }
     
     .Main-Tv area {
@@ -170,7 +170,7 @@ html, body {
   top: 0;
   left: 59%;
   z-index: 1;
-  cursor: url("images/yarn-ball.pdf"), url("images/fish-cursor.pdf"), url("images/mouse-cusor.pdf"), auto; 
+  cursor: url("images/yarn-ball.pdf") -60 50, url("images/fish-cursor.pdf"), url("images/mouse-cusor.pdf"), auto; 
 }
 
 #moveable {
