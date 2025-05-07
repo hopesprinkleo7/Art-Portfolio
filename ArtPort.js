@@ -12,6 +12,10 @@ function drawToggle() {
   bottomDraw.classList.toggle("open"); 
 };
 
+
+
+
+
 character.addEventListener("click", characterToggle);
 bottomDraw.addEventListener("click", drawToggle);
 

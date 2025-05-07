@@ -132,9 +132,9 @@ html, body {
           /* image needs to be like 800px800px MAX and pdf*/ 
     }
 
-    .imageMap2 {
+    .dinocursor {
       display: block;
-      cursor: url('images/money-cursor.pdf') 8 8, auto; 
+      cursor: url('images/dino.pdf') 200 50, auto; 
     }
     
     .Main-Tv area {
