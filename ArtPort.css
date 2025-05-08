@@ -21,6 +21,16 @@ html, body {
 
 *, *::before, *::after {
     box-sizing: border-box;   }
+a { color:rgb(169, 208, 153);} 
+a:hover {color: rgb(131, 181, 127);}
+a:active {color: rgb(252, 204, 229);}
+a:visited {color: rgb(255, 172, 227);}
+.mansalva-regular {
+  font-family: "Mansalva", sans-serif;
+  font-weight: 5;
+  font-style: normal;
+}
+
 
 
 #character {
@@ -131,10 +141,9 @@ html, body {
         cursor: url("images/handclosingcursor.pdf") 30 40, auto; 
           /* image needs to be like 800px800px MAX and pdf*/ 
     }
-
-    .dinocursor {
+    .cursorimageMap2 {
+      cursor: url("images/fish-cursor.pdf"), auto;
       display: block;
-      cursor: url('images/dino.pdf') 200 50, auto; 
     }
     
     .Main-Tv area {
@@ -188,7 +197,7 @@ html, body {
 }
 txt {
   position: absolute;
-  width: 100%;
+  width: 180%;
   height: 100%;
   top: 0;
   left: 0;
@@ -196,10 +205,46 @@ txt {
   display: flex;
   flex-direction: column;
   align-items: flex-start;
-  gap: 3px;
+  gap: 2.3px;
   justify-content: center;
   /* min() lets you set two values for the same property and will always display at the smaller of the two. In your case using vw means it'll scale with the width of your screen until it reaches 18px, then will stay 18px */
   font-size: min(1.5vw, 24px);
   overflow: auto;
-  padding: 15%;
+  padding: 12%;
+}
+
+@keyframes slideInFromRight {
+  0% {
+    transform: translateX(600%);
+  }
+  100% {
+    transform: translateX(0);
+  }
+}
+
+.fall-img {
+  animation-name: slideInFromRight;
+  animation-duration: 4s;
+  animation-timing-function: ease-in;
+  position: absolute;
+  top: 10px;
+  left: 30%;
+  /* transform: translateX(-400%); */
+  transition: transform 4s ease-in;
+  cursor: pointer;
+  display: inline-block;
+  width: min(10%, 50px);
+}
+
+.fall {
+  transform: translate(0%, -50vh) scale(0.5) rotate(60deg);
+}
+
+.second-img {
+  top: -60%;
+  opacity: 1;
+}
+
+.second-img.fall {
+  transition-duration: 6s;
 }

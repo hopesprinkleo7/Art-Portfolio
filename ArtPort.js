@@ -12,10 +12,6 @@ function drawToggle() {
   bottomDraw.classList.toggle("open"); 
 };
 
-
-
-
-
 character.addEventListener("click", characterToggle);
 bottomDraw.addEventListener("click", drawToggle);
 
@@ -73,4 +69,10 @@ function dragElement(elmnt) {
     document.onmouseup = null;
     document.onmousemove = null;
   }
+}
+function makeItFall() {
+  const firstImage = document.querySelector('.first-img');
+  const secondImage = document.querySelector('.second-img');
+  firstImage.classList.add('fall');
+  secondImage.classList.add('fall');  // Automatically make the second image fall
 }
