@@ -235,6 +235,20 @@ txt {
   display: inline-block;
   width: min(10%, 50px);
 }
+.fall-img2 {
+  animation-name: slideInFromRight;
+  animation-duration: 4s;
+  animation-timing-function: ease-in;
+  position: absolute;
+  top: 10px;
+  left: 40%;
+  /* transform: translateX(-400%); */
+  transition: transform 4s ease-in;
+  cursor: pointer;
+  display: inline-block;
+  width: min(10%, 50px);
+}
+
 
 .fall {
   transform: translate(0%, -50vh) scale(0.5) rotate(60deg);
