@@ -144,6 +144,10 @@ a:visited {color: rgb(255, 172, 227);}
     .cursorimageMap2 {
       cursor: url("images/fish-cursor.pdf"), auto;
       display: block;
+<<<<<<< Updated upstream
+=======
+      cursor: url('images/dinosursor.png') 8 8, auto; 
+>>>>>>> Stashed changes
     }
     
     .Main-Tv area {
