@@ -24,10 +24,10 @@ cat.addEventListener("click", catAudio);
 
 
 const piggybank = document.querySelector(".piggybank");
-function catAudio() {
+function pigAudio() {
   new Audio("coin.mp3").play();
 }
-piggybank.addEventListener("click", catAudio);
+piggybank.addEventListener("click", pigAudio);
 
 
 //Make the DIV element draggagle:
