@@ -11,13 +11,6 @@ function characterToggle() {
 function drawToggle() {
   bottomDraw.classList.toggle("open"); 
 };
-document.querySelectorAll('imageMap').forEach(area => {
-  area.addEventListener('mouseover', () => {
-    document.body.style.cursor = 'url(images/dinosursor.png) 8 8, auto';
-  });
-
-
-
 
 character.addEventListener("click", characterToggle);
 bottomDraw.addEventListener("click", drawToggle);
