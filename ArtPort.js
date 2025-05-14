@@ -4,6 +4,23 @@
 const character = document.querySelector("#character");
 const bottomDraw = document.querySelector("#bottom-draw");
 
+const music = document.getElementById("background-music");
+const button = document.getElementById("toggle-music");
+
+let isPlaying = false;
+
+button.addEventListener("click", () => {
+  if (!isPlaying) {
+    music.play();
+    button.textContent = "Pause Music";
+  } else {
+    music.pause();
+    button.textContent = "Play Music";
+  }
+  isPlaying = !isPlaying;
+});
+
+
 function characterToggle() {
   // alert ("Welcome To My Page!!");
   character.classList.toggle("inside"); 
