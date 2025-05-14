@@ -187,13 +187,12 @@ a:visited {color: rgb(255, 172, 227);}
   aspect-ratio: 400/380;
   width: 20%;
   max-width: 400px;
-  /* height: 380px; */
   background: url(images/notecard.png);
   background-size: cover;
   position: absolute;
     z-index: 9;
-  top: 120px;
-  left:200px;
+  top: 90px;
+  left:68px;
   text-align: left;
 }
 txt {
@@ -230,34 +229,22 @@ txt {
   position: absolute;
   top: 10px;
   left: 30%;
-  /* transform: translateX(-400%); */
   transition: transform 4s ease-in;
   cursor: pointer;
   display: inline-block;
   width: min(10%, 50px);
 }
-.fall-img2 {
-  animation-name: slideInFromRight;
-  animation-duration: 4s;
-  animation-timing-function: ease-in;
-  position: absolute;
-  top: 10px;
-  left: 40%;
-  /* transform: translateX(-400%); */
-  transition: transform 4s ease-in;
-  cursor: pointer;
-  display: inline-block;
-  width: min(10%, 50px);
-}
-
 
 .fall {
   transform: translate(0%, -50vh) scale(0.5) rotate(60deg);
 }
 
+
 .second-img {
+  left: 40%;
   top: -60%;
   opacity: 1;
+  
 }
 
 .second-img.fall {
