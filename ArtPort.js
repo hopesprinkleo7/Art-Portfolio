@@ -120,4 +120,9 @@ function makeItFall() {
   const secondImage = document.querySelector('.second-img');
   firstImage.classList.add('fall');
   secondImage.classList.add('fall');  // Automatically make the second image fall
-}
+}  
+const fallImg = document.querySelector('.fall-img');
+
+fallImg.addEventListener('animationend', () => {
+  fallImg.style.top = '0px'; // Move it further up
+});
