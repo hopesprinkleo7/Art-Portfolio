@@ -42,7 +42,7 @@ a:visited {color: rgb(255, 172, 227);}
 }
 
 #movableIcon {
-  width: 100px;
+  width: 8%;
   cursor: grab;
   position: absolute;
   top: 30px;
