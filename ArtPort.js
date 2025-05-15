@@ -4,20 +4,48 @@
 const character = document.querySelector("#character");
 const bottomDraw = document.querySelector("#bottom-draw");
 
-const music = document.getElementById("background-music");
-const button = document.getElementById("toggle-music");
 
-let isPlaying = false;
 
-button.addEventListener("click", () => {
-  if (!isPlaying) {
-    music.play();
-    button.textContent = "Pause Music";
-  } else {
-    music.pause();
-    button.textContent = "Play Music";
+const audioElement = document.getElementById("backgroundTrack");
+const iconElement = document.getElementById("movableIcon");
+
+let isDraggingNow = false;
+let xOffset = 0, yOffset = 0;
+
+// Play/Pause + Spin Toggle
+iconElement.addEventListener("click", (event) => {
+  // Prevent drag-click conflict
+  if (event.detail === 1) {
+    if (audioElement.paused) {
+      audioElement.play();
+      iconElement.classList.add("rotateOnPlay");
+    } else {
+      audioElement.pause();
+      iconElement.classList.remove("rotateOnPlay");
+    }
   }
-  isPlaying = !isPlaying;
+});
+
+// Start dragging
+iconElement.addEventListener("mousedown", (event) => {
+  isDraggingNow = true;
+  xOffset = event.clientX - iconElement.offsetLeft;
+  yOffset = event.clientY - iconElement.offsetTop;
+  iconElement.style.cursor = "grabbing";
+});
+
+// Handle dragging movement
+document.addEventListener("mousemove", (event) => {
+  if (isDraggingNow) {
+    iconElement.style.left = (event.clientX - xOffset) + "px";
+    iconElement.style.top = (event.clientY - yOffset) + "px";
+  }
+});
+
+// Stop dragging
+document.addEventListener("mouseup", () => {
+  isDraggingNow = false;
+  iconElement.style.cursor = "grab";
 });
 
 

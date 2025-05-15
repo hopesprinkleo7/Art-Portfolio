@@ -32,6 +32,24 @@ a:visited {color: rgb(255, 172, 227);}
 }
 
 
+@keyframes rotateEffect {
+  from { transform: rotate(0deg); }
+  to { transform: rotate(360deg); }
+}
+
+.rotateOnPlay {
+  animation: rotateEffect 2s linear infinite;
+}
+
+#movableIcon {
+  width: 100px;
+  cursor: grab;
+  position: absolute;
+  top: 30px;
+  left: 20px;
+  user-select: none;
+}
+
 
 #character {
      margin: 0 auto;
