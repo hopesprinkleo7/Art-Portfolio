@@ -5,6 +5,11 @@ const character = document.querySelector("#character");
 const bottomDraw = document.querySelector("#bottom-draw");
 
 
+
+
+
+  window.addEventListener("DOMContentLoaded", () => {
+
 // Set initial volume
 audioElement.volume = 0.5;
 volumeSlider.value = 0.5;
@@ -16,14 +21,31 @@ let isDraggingNow = false;
 let xOffset = 0, yOffset = 0;
 
 // Play/Pause + Spin Toggle
-iconElement.addEventListener ("click"), (event) => {}
-  
+iconElement.addEventListener("click", (event) => {
+  // Prevent drag-click conflict
+  if (event.detail === 1) {
+    if (audioElement.paused) {
+      audioElement.play();
+    } else {
+      audioElement.pause();
+      iconElement.classList.remove("rotateOnPlay"); // Stop spinning
+    }
+  }
+}); 
+
+audioElement.volume = 0.5; // Start at medium volume
 
 const volumeSlider = document.getElementById("volume-slider");
 
 volumeSlider.addEventListener("input", () => {
   audioElement.volume = parseFloat(volumeSlider.value);
 });
+
+  });
+
+
+
+
 
 
 
