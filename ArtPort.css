@@ -39,8 +39,13 @@ a:visited {color: rgb(255, 172, 227);}
 }
 
 .rotateOnPlay {
-  animation: rotateEffect 2s linear infinite;
+  animation: spin 3s linear infinite;
 }
+
+
+
+
+
 
 
 #movableIcon {
