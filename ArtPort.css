@@ -42,17 +42,6 @@ a:visited {color: rgb(255, 172, 227);}
   animation: rotateEffect 2s linear infinite;
 }
 
-
-#movableIcon {
-  width: 8%;
-  cursor: grab;
-  position: absolute;
-  top: 33px;
-  left: 20px;
-  user-select: none;
-}
-
-
 #character {
      margin: 0 auto;
       max-width: 540px;
