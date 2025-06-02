@@ -5,6 +5,18 @@ const character = document.querySelector("#character");
 const bottomDraw = document.querySelector("#bottom-draw");
 
 
+
+
+
+
+
+  window.addEventListener("DOMContentLoaded", () => {
+
+// Get references to DOM elements
+const audioElement = document.getElementById("backgroundTrack");
+const iconElement = document.getElementById("movableIcon");
+const volumeSlider = document.getElementById("volume-slider");
+
 // Set initial volume
 audioElement.volume = 0.5;
 volumeSlider.value = 0.5;
@@ -14,10 +26,10 @@ iconElement.addEventListener("click", (event) => {
   if (event.detail === 1) {
     if (audioElement.paused) {
       audioElement.play();
-      iconElement.classList.add("rotateOnPlay"); // Optional animation
+      iconElement.classList.add("rotateOnPlay"); // Start spinning
     } else {
       audioElement.pause();
-      iconElement.classList.remove("rotateOnPlay");
+      iconElement.classList.remove("rotateOnPlay"); // Stop spinning
     }
   }
 });
@@ -26,6 +38,14 @@ iconElement.addEventListener("click", (event) => {
 volumeSlider.addEventListener("input", () => {
   audioElement.volume = parseFloat(volumeSlider.value);
 });
+
+  });
+
+
+
+
+
+
 
 
 
