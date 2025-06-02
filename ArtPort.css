@@ -155,7 +155,7 @@ a:visited {color: rgb(255, 172, 227);}
           /* image needs to be like 800px800px MAX and pdf*/ 
     }
     .cursorimageMap2 {
-      cursor: url("images/fish-cursor.png"), auto;
+      cursor: url("images/fish-cursor.png") 20 20, auto;
       display: block;
       cursor: url('images/dino.png') 8 8, auto; 
     }
@@ -193,7 +193,7 @@ a:visited {color: rgb(255, 172, 227);}
   top: 0;
   left: 59%;
   z-index: 1;
-  cursor: url("images/yarn-ball.pdf") -60 50, url("images/fish-cursor.png"), url("images/mouse-cusor.pdf"), auto; 
+  cursor: url("images/yarn-ball.pdf") -60 50, url("images/fish-cursor.png") 20 20, url("images/mouse-cusor.pdf"), auto; 
 }
 
 #moveable {
