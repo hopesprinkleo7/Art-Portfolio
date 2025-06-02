@@ -5,24 +5,30 @@ const character = document.querySelector("#character");
 const bottomDraw = document.querySelector("#bottom-draw");
 
 
-// Set initial volume
-audioElement.volume = 0.5;
-volumeSlider.value = 0.5;
 
-// Play/pause on image click
+const audioElement = document.getElementById("backgroundTrack");
+const iconElement = document.getElementById("movableIcon");
+
+let isDraggingNow = false;
+let xOffset = 0, yOffset = 0;
+
+// Play/Pause + Spin Toggle
 iconElement.addEventListener("click", (event) => {
+  // Prevent drag-click conflict
   if (event.detail === 1) {
     if (audioElement.paused) {
       audioElement.play();
-      iconElement.classList.add("rotateOnPlay"); // Optional animation
+      iconElement.classList.add("rotateOnPlay");
     } else {
       audioElement.pause();
       iconElement.classList.remove("rotateOnPlay");
     }
   }
-});
+}); 
+audioElement.volume = 0.5; // Start at medium volume
 
-// Volume control via slider
+const volumeSlider = document.getElementById("volume-slider");
+
 volumeSlider.addEventListener("input", () => {
   audioElement.volume = parseFloat(volumeSlider.value);
 });
@@ -76,6 +82,7 @@ function pigAudio() {
   new Audio("coin.mp3").play();
 }
 piggybank.addEventListener("click", pigAudio);
+
 
 //Make the DIV element draggagle:
 dragElement(document.getElementById("moveable"));
