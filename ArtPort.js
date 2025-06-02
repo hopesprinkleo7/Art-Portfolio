@@ -24,7 +24,16 @@ iconElement.addEventListener("click", (event) => {
       iconElement.classList.remove("rotateOnPlay");
     }
   }
+}); 
+audioElement.volume = 0.5; // Start at medium volume
+
+const volumeSlider = document.getElementById("volume-slider");
+
+volumeSlider.addEventListener("input", () => {
+  audioElement.volume = parseFloat(volumeSlider.value);
 });
+
+
 
 // Start dragging
 iconElement.addEventListener("mousedown", (event) => {
