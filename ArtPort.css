@@ -32,7 +32,8 @@ a:visited {color: rgb(255, 172, 227);}
 }
 
 
-@keyframes rotateEffect {
+
+@keyframes spin {
   from { transform: rotate(0deg); }
   to { transform: rotate(360deg); }
 }
@@ -41,58 +42,10 @@ a:visited {color: rgb(255, 172, 227);}
   animation: spin 3s linear infinite;
 }
 
-@keyframes spin {
-  100% {
-    transform: rotate(360deg);
-  }
-}
 
-/* Base slider styling */
-#volume-slider {
-  width: 200px;
-  height: 6px;
-  background: transparent;
-  appearance: none;
-  -webkit-appearance: none;
-  cursor: pointer;
-  border-radius: 5px;
-  outline: none;
-}
 
-/* Track - WebKit (Chrome, Safari, Edge) */
-#volume-slider::-webkit-slider-runnable-track {
-  background: #4caf50; /* Green track */
-  height: 6px;
-  border-radius: 5px;
-}
 
-/* Thumb - WebKit */
-#volume-slider::-webkit-slider-thumb {
-  -webkit-appearance: none;
-  appearance: none;
-  height: 16px;
-  width: 16px;
-  background: #4caf50;
-  border: 2px solid white;
-  border-radius: 50%;
-  margin-top: -5px;
-}
 
-/* Track - Firefox */
-#volume-slider::-moz-range-track {
-  background: #4caf50;
-  height: 6px;
-  border-radius: 5px;
-}
-
-/* Thumb - Firefox */
-#volume-slider::-moz-range-thumb {
-  height: 16px;
-  width: 16px;
-  background: #4caf50;
-  border: 2px solid white;
-  border-radius: 50%;
-}
 
 
 #movableIcon {
