@@ -3,17 +3,14 @@
 
 const character = document.querySelector("#character");
 const bottomDraw = document.querySelector("#bottom-draw");
-const audioElement = document.getElementById("backgroundTrack");
-const iconElement = document.getElementById("movableIcon");
-
-
-
 
 
 // Set initial volume
 audioElement.volume = 0.5;
 volumeSlider.value = 0.5;
 
+const audioElement = document.getElementById("backgroundTrack");
+const iconElement = document.getElementById("movableIcon");
 
 let isDraggingNow = false;
 let xOffset = 0, yOffset = 0;
@@ -27,8 +24,6 @@ const volumeSlider = document.getElementById("volume-slider");
 volumeSlider.addEventListener("input", () => {
   audioElement.volume = parseFloat(volumeSlider.value);
 });
-
-
 
 
 
