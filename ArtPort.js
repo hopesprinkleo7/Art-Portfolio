@@ -5,25 +5,33 @@ const character = document.querySelector("#character");
 const bottomDraw = document.querySelector("#bottom-draw");
 
 
+
+
+// Get elements
+const audioElement = document.getElementById("backgroundTrack");
+const iconElement = document.getElementById("movableIcon");
+const volumeSlider = document.getElementById("volume-slider");
+
 // Set initial volume
 audioElement.volume = 0.5;
 volumeSlider.value = 0.5;
 
-const audioElement = document.getElementById("backgroundTrack");
-const iconElement = document.getElementById("movableIcon");
+// Play/pause and spin toggle on click
+iconElement.addEventListener("click", () => {
+  if (audioElement.paused) {
+    audioElement.play();
+    iconElement.classList.add("rotateOnPlay");
+  } else {
+    audioElement.pause();
+    iconElement.classList.remove("rotateOnPlay");
+  }
+});
 
-let isDraggingNow = false;
-let xOffset = 0, yOffset = 0;
-
-// Play/Pause + Spin Toggle
-iconElement.addEventListener ("click"), (event) => {}
-  
-
-const volumeSlider = document.getElementById("volume-slider");
-
+// Volume control from slider
 volumeSlider.addEventListener("input", () => {
   audioElement.volume = parseFloat(volumeSlider.value);
 });
+
 
 
 
