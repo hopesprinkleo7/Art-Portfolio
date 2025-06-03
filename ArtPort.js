@@ -5,29 +5,24 @@ const character = document.querySelector("#character");
 const bottomDraw = document.querySelector("#bottom-draw");
 
 
-
-
-// Get elements
-const audioElement = document.getElementById("backgroundTrack");
-const iconElement = document.getElementById("movableIcon");
-const volumeSlider = document.getElementById("volume-slider");
-
 // Set initial volume
 audioElement.volume = 0.5;
 volumeSlider.value = 0.5;
 
-// Play/pause and spin toggle on click
-iconElement.addEventListener("click", () => {
-  if (audioElement.paused) {
-    audioElement.play();
-    iconElement.classList.add("rotateOnPlay");
-  } else {
-    audioElement.pause();
-    iconElement.classList.remove("rotateOnPlay");
+// Play/pause on image click
+iconElement.addEventListener("click", (event) => {
+  if (event.detail === 1) {
+    if (audioElement.paused) {
+      audioElement.play();
+      iconElement.classList.add("rotateOnPlay"); // Optional animation
+    } else {
+      audioElement.pause();
+      iconElement.classList.remove("rotateOnPlay");
+    }
   }
 });
 
-// Volume control from slider
+// Volume control via slider
 volumeSlider.addEventListener("input", () => {
   audioElement.volume = parseFloat(volumeSlider.value);
 });
@@ -92,7 +87,6 @@ function pigAudio() {
   new Audio("coin.mp3").play();
 }
 piggybank.addEventListener("click", pigAudio);
-
 
 //Make the DIV element draggagle:
 dragElement(document.getElementById("moveable"));
