@@ -33,20 +33,17 @@ a:visited {color: rgb(255, 172, 227);}
 
 
 
-@keyframes spin {
-  from { transform: rotate(0deg); }
-  to { transform: rotate(360deg); }
-}
-
-
-.rotateOnPlay {
-  animation: spin 3s linear infinite;
-}
-
-@keyframes spin {
+/* Spin animation */
+@keyframes spinRecord {
   100% {
     transform: rotate(360deg);
   }
+}
+
+/* Class to apply spin */
+.spinActive {
+  animation: spinRecord 3s linear infinite;
+  transform-origin: center;
 }
 
 
