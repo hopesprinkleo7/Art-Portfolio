@@ -5,26 +5,27 @@ const character = document.querySelector("#character");
 const bottomDraw = document.querySelector("#bottom-draw");
 
 
-// Set initial volume
-audioElement.volume = 0.5;
-volumeSlider.value = 0.5;
 
-// Play/pause on image click
-iconElement.addEventListener("click", (event) => {
-  if (event.detail === 1) {
-    if (audioElement.paused) {
-      audioElement.play();
-      iconElement.classList.add("rotateOnPlay"); // Optional animation
-    } else {
-      audioElement.pause();
-      iconElement.classList.remove("rotateOnPlay");
-    }
+
+const audio = document.getElementById("ambientTrack");
+const image = document.getElementById("audioToggleImage");
+const volumeSlider = document.getElementById("musicVolumeSlider");
+
+// Click image to toggle music and spin
+image.addEventListener("click", () => {
+  if (audio.paused) {
+    audio.play();
+    image.classList.add("spin-animation");
+  } else {
+    audio.pause();
+    image.classList.remove("spin-animation");
   }
 });
 
-// Volume control via slider
+// Volume control
+audio.volume = parseFloat(volumeSlider.value);
 volumeSlider.addEventListener("input", () => {
-  audioElement.volume = parseFloat(volumeSlider.value);
+  audio.volume = parseFloat(volumeSlider.value);
 });
 
 
@@ -33,34 +34,27 @@ volumeSlider.addEventListener("input", () => {
 
 
 
+const moveable = document.getElementById("moveable");
 
+  let isDragging = false;
+  let offsetX, offsetY;
 
+  moveable.addEventListener("mousedown", (e) => {
+    isDragging = true;
+    offsetX = e.offsetX;
+    offsetY = e.offsetY;
+  });
 
+  document.addEventListener("mouseup", () => {
+    isDragging = false;
+  });
 
-
-
-
-// Start dragging
-iconElement.addEventListener("mousedown", (event) => {
-  isDraggingNow = true;
-  xOffset = event.clientX - iconElement.offsetLeft;
-  yOffset = event.clientY - iconElement.offsetTop;
-  iconElement.style.cursor = "grabbing";
-});
-
-// Handle dragging movement
-document.addEventListener("mousemove", (event) => {
-  if (isDraggingNow) {
-    iconElement.style.left = (event.clientX - xOffset) + "px";
-    iconElement.style.top = (event.clientY - yOffset) + "px";
-  }
-});
-
-// Stop dragging
-document.addEventListener("mouseup", () => {
-  isDraggingNow = false;
-  iconElement.style.cursor = "grab";
-});
+  document.addEventListener("mousemove", (e) => {
+    if (isDragging) {
+      moveable.style.left = `${e.pageX - offsetX}px`;
+      moveable.style.top = `${e.pageY - offsetY}px`;
+    }
+  });
 
 
 function characterToggle() {

@@ -32,22 +32,79 @@ a:visited {color: rgb(255, 172, 227);}
 }
 
 
-
-@keyframes spin {
-  from { transform: rotate(0deg); }
-  to { transform: rotate(360deg); }
-}
-
-
-.rotateOnPlay {
-  animation: spin 3s linear infinite;
-}
-
 @keyframes spin {
   100% {
     transform: rotate(360deg);
   }
 }
+
+.spin-animation {
+  animation: spin 2s linear infinite;
+}
+#audioToggleImage {
+  width: 80px;
+  position: absolute;
+  top: 20px;
+  left: 20px;
+  cursor: pointer;
+  z-index: 999;
+}
+#musicVolumeSlider {
+  -webkit-appearance: none;
+  width: 150px;
+  height: 6px;
+  background: #a8e6a1; /* green track */
+  border-radius: 5px;
+  outline: none;
+  margin: 10px;
+}
+
+/* Chrome, Safari, Edge */
+#musicVolumeSlider::-webkit-slider-thumb {
+  -webkit-appearance: none;
+  height: 18px;
+  width: 18px;
+  background: #4CAF50; /* green thumb */
+  border-radius: 50%;
+  cursor: pointer;
+  border: 2px solid #388e3c;
+}
+
+/* Firefox */
+#musicVolumeSlider::-moz-range-thumb {
+  height: 18px;
+  width: 18px;
+  background: #4CAF50;
+  border-radius: 50%;
+  cursor: pointer;
+  border: 2px solid #388e3c;
+}
+
+#musicVolumeSlider::-moz-range-track {
+  background: #a8e6a1;
+  height: 6px;
+  border-radius: 5px;
+}
+
+/* IE (very old support, optional) */
+#musicVolumeSlider::-ms-thumb {
+  background: #4CAF50;
+}
+
+#musicVolumeSlider::-ms-track {
+  background: transparent;
+  border-color: transparent;
+  color: transparent;
+}
+
+#musicVolumeSlider::-ms-fill-lower {
+  background: #a8e6a1;
+}
+
+#musicVolumeSlider::-ms-fill-upper {
+  background: #a8e6a1;
+}
+
 
 
 
@@ -165,9 +222,7 @@ a:visited {color: rgb(255, 172, 227);}
           /* image needs to be like 800px800px MAX and pdf*/ 
     }
     .cursorimageMap2 {
-      cursor: url("images/fish-cursor.png") 8 8, auto;
-      display: block;
-      cursor: url('images/dino.png') 8 8, auto; 
+      cursor: url('images/dino.png') 8 8, url("images/fish-cursor.png") 8 8, auto;
     }
     
     .Main-Tv area {
@@ -218,7 +273,7 @@ a:visited {color: rgb(255, 172, 227);}
   left:68px;
   text-align: left;
 }
-txt {
+.txt {
   position: absolute;
   width: 180%;
   height: 100%;
