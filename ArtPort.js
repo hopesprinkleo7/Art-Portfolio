@@ -28,7 +28,19 @@ volumeSlider.addEventListener("input", () => {
   audio.volume = parseFloat(volumeSlider.value);
 });
 
+ const slider = document.getElementById('musicVolumeSlider');
 
+  slider.addEventListener('mousedown', () => {
+    slider.classList.add('volume-adjusting');
+  });
+
+  slider.addEventListener('mouseup', () => {
+    slider.classList.remove('volume-adjusting');
+  });
+
+  slider.addEventListener('mouseleave', () => {
+    slider.classList.remove('volume-adjusting');
+  });
 
 
 
@@ -122,6 +134,25 @@ function dragElement(elmnt) {
     document.onmousemove = null;
   }
 }
+
+document.addEventListener("DOMContentLoaded", () => {
+  const fallImg = document.querySelector(".fall-img");
+  const popup = document.querySelector(".popup-image");
+
+  // Show the popup after the falling image slides in
+  fallImg.addEventListener("animationend", () => {
+    popup.style.display = "block";
+  });
+
+  // Also hide popup immediately when clicked
+  fallImg.addEventListener("click", () => {
+    popup.style.display = "none"; // hide when fall starts
+    fallImg.classList.add("fall"); // trigger falling animation
+  });
+});
+
+
+
 function makeItFall() {
   const firstImage = document.querySelector('.first-img');
   const secondImage = document.querySelector('.second-img');
