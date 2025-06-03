@@ -37,6 +37,14 @@ volumeSlider.addEventListener("input", () => {
 
 
 
+
+
+
+
+
+
+
+
 // Start dragging
 iconElement.addEventListener("mousedown", (event) => {
   isDraggingNow = true;
