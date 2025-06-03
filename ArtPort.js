@@ -4,28 +4,27 @@
 const character = document.querySelector("#character");
 const bottomDraw = document.querySelector("#bottom-draw");
 
-const audio = document.getElementById("ambientTrack");
-const toggleImage = document.getElementById("audioToggleImage");
-const volumeSlider = document.getElementById("musicVolumeSlider");
 
 // Set initial volume
-audio.volume = 0.5;
+audioElement.volume = 0.5;
 volumeSlider.value = 0.5;
 
-// Click to play/pause and toggle spin
-toggleImage.addEventListener("click", () => {
-  if (audio.paused) {
-    audio.play();
-    toggleImage.classList.add("spinActive");
-  } else {
-    audio.pause();
-    toggleImage.classList.remove("spinActive");
+// Play/pause on image click
+iconElement.addEventListener("click", (event) => {
+  if (event.detail === 1) {
+    if (audioElement.paused) {
+      audioElement.play();
+      iconElement.classList.add("rotateOnPlay"); // Optional animation
+    } else {
+      audioElement.pause();
+      iconElement.classList.remove("rotateOnPlay");
+    }
   }
 });
 
-// Volume slider
+// Volume control via slider
 volumeSlider.addEventListener("input", () => {
-  audio.volume = parseFloat(volumeSlider.value);
+  audioElement.volume = parseFloat(volumeSlider.value);
 });
 
 
