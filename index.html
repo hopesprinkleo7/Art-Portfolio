@@ -12,9 +12,6 @@
     <body>
   
 
-
-
-
   <!-- Custom-named draggable music image -->
   <img id="audioToggleImage" src="images/musicdisc.png" alt="Audio Toggle" />
   <audio id="ambientTrack" src="ethereal-ambient-music-55115.mp3" loop></audio>
@@ -22,35 +19,32 @@
   <!-- Volume slider -->
   <input type="range" id="musicVolumeSlider" min="0" max="1" step="0.01" value="0.5"> 
 
- 
+<div id="character"> 
+  <img class="Main-Tv" src="images/mainscreenportfolio.png" usemap="#imageMap">
+  <map name="imageMap">
+    <area shape="rect" coords="450,250,350,160" href="https://discord.com/channels/729649530269728808/1336862214984040469"> 
+  </map>
 
+  <!-- Character and speech bubble grouped here -->
+  <div class="character-inside">
+    <img class="character-image" src="images/character-inside-tv(looking).jpg" alt="Character">
+    <img class="hover-speech" src="images/speechbubble.Hey!.png" alt="Speech Bubble">
+  </div>
 
+  <img class="character-active" src="images/char-welcome-page(active).png">
+</div>
 
-      <div id="character"> 
-        <img class="Main-Tv" src="images/mainscreenportfolio.png" usemap="#imageMap">
-        <map name="imageMap">
-          <area shape="rect" coords="450,250,350,160" href="https://discord.com/channels/729649530269728808/1336862214984040469"> 
-        </map>
-        <img class="character-inside" src="images/character-inside-tv(looking) .png"> 
-        <div class="character-inside">
-          <img class="hover-speech" src="images/speechbubble.Hey!.png">
-        </div> 
-        <img class="character-active" src="images/char-welcome-page(active).png">
-         
-      </div>
-     
-      
+  <div id="dresser">
 
-        <div id="dresser">
+   <div id="top-draw">
+   <img class="Main-dresser" src="images/Draw-closed.png"> 
+   <img class="piggybank" src="images/piggybank.png"> 
+   <img src="images/dino.png" class="fall-img first-img" id="dino" onclick="makeItFall()">
+   <img src="images/speechbubble.Hey!.png" class="popup-image" id="dinoPopup" style="display: none;" />
+   <img src="images/alienShapeShip.png" class="fall-img second-img">
+   <audio id="dinoSound" src="spaceshipaudio.mp4"></audio>
+  </div>
 
-          <div id="top-draw">
-            <img class="Main-dresser" src="images/Draw-closed.png"> 
-           <img class="piggybank" src="images/piggybank.png"> 
-           <img src="images/dino.png" class="fall-img first-img" onclick="makeItFall()">
-           <img src="images/fish-cursor.png" class="popup-image" style="display: none;" />
-           <img src="images/alienShapeShip.png" class="fall-img second-img">
-          </div>
-      
             
           <!-- #draw will be position: relative; in your CSS, not here-->
           <div id="bottom-draw">

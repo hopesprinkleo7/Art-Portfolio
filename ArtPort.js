@@ -135,32 +135,31 @@ function dragElement(elmnt) {
   }
 }
 
+
 document.addEventListener("DOMContentLoaded", () => {
-  const fallImg = document.querySelector(".fall-img");
-  const popup = document.querySelector(".popup-image");
+  const dino = document.getElementById("dino");
+  const popup = document.getElementById("dinoPopup");
+  const secondImage = document.querySelector(".second-img");
+  const dinoSound = document.getElementById("dinoSound");
 
-  // Show the popup after the falling image slides in
-  fallImg.addEventListener("animationend", () => {
+  // Show popup after animation
+  dino.addEventListener("animationend", () => {
     popup.style.display = "block";
+    setTimeout(() => {
+      popup.style.display = "none";
+    }, 4000);
   });
 
-  // Also hide popup immediately when clicked
-  fallImg.addEventListener("click", () => {
-    popup.style.display = "none"; // hide when fall starts
-    fallImg.classList.add("fall"); // trigger falling animation
+  // Play sound and trigger fall
+  dino.addEventListener("click", () => {
+    popup.style.display = "none";
+    dino.classList.add("fall");
+    secondImage.classList.add("fall");
+
+    // Play audio
+    if (dinoSound) {
+      dinoSound.currentTime = 0; // Rewind if needed
+      dinoSound.play().catch(e => console.log("Audio failed to play:", e));
+    }
   });
-});
-
-
-
-function makeItFall() {
-  const firstImage = document.querySelector('.first-img');
-  const secondImage = document.querySelector('.second-img');
-  firstImage.classList.add('fall');
-  secondImage.classList.add('fall');  // Automatically make the second image fall
-}  
-const fallImg = document.querySelector('.fall-img');
-
-fallImg.addEventListener('animationend', () => {
-  fallImg.style.top = '0px'; // Move it further up
 });
