@@ -338,7 +338,8 @@ a:visited {color: rgb(255, 172, 227);}
   cursor: pointer;
   display: inline-block;
   width: min(10%, 50px);
-   z-index: 5;
+  z-index: 5;
+  cursor: url("images/alienreacching.png"), auto;
 }
 
 .fall {
