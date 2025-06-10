@@ -42,10 +42,6 @@ volumeSlider.addEventListener("input", () => {
     slider.classList.remove('volume-adjusting');
   });
 
-
-
-
-
 const moveable = document.getElementById("moveable");
 
   let isDragging = false;
@@ -162,4 +158,71 @@ document.addEventListener("DOMContentLoaded", () => {
       dinoSound.play().catch(e => console.log("Audio failed to play:", e));
     }
   });
+});
+
+
+const drawOpened = document.querySelector(".Draw-opened");
+const cords = [
+  {
+    coords: [0.153, 0.35, 0.283, 0.65],
+    url: "https://discord.com/channels/729649530269728808/1336862214984040469"
+  },
+  {
+    coords: [0.383, 0.35, 0.513, 0.65],
+    url: "https://www.pinterest.com"
+  },
+  {
+    coords: [0.646, 0.35, 0.776, 0.65],
+    url: "https://genshin.hoyoverse.com/en/gift"
+  }
+];
+drawOpened.addEventListener("mousemove", function (event) {
+  const rect = this.getBoundingClientRect();
+  const x = event.clientX - rect.left;
+  const y = event.clientY - rect.top;
+  const width = rect.width;
+  const height = rect.height;
+
+  let hovering = false;
+
+  for (const { coords } of cords) {
+    const [x1p, y1p, x2p, y2p] = coords;
+    const x1 = x1p * width;
+    const y1 = y1p * height;
+    const x2 = x2p * width;
+    const y2 = y2p * height;
+
+    if (x >= x1 && x <= x2 && y >= y1 && y <= y2) {
+      drawOpened.style.cursor = "url('images/yarn-ball.png'), auto";
+      hovering = true;
+      return;
+    }
+  }
+
+  drawOpened.style.cursor = "auto";
+});
+
+drawOpened.addEventListener("click", function (event) {
+  const rect = this.getBoundingClientRect();
+  const x = event.clientX - rect.left;
+  const y = event.clientY - rect.top;
+  const width = rect.width;
+  const height = rect.height;
+
+  for (const { coords, url } of cords) {
+    const [x1p, y1p, x2p, y2p] = coords;
+    const x1 = x1p * width;
+    const y1 = y1p * height;
+    const x2 = x2p * width;
+    const y2 = y2p * height;
+
+    if (x >= x1 && x <= x2 && y >= y1 && y <= y2) {
+      window.open(url, "_blank");
+      return;
+    }
+  }
+});
+
+drawOpened.addEventListener("mouseleave", function () {
+  drawOpened.style.cursor = "auto";
 });

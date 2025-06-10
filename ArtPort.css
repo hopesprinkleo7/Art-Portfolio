@@ -263,6 +263,14 @@ a:visited {color: rgb(255, 172, 227);}
     #bottom-draw.open .Draw-opened {
         display: block;
     }
+
+
+    .cord-cursor {
+  cursor: url('images/alienreacching.png'), url("images/fish-cursor.png") 8 8, auto;  /* ← FIXED */
+}
+
+
+
 .piggybank {
   position: absolute;
   max-width: 100px;
@@ -317,6 +325,8 @@ a:visited {color: rgb(255, 172, 227);}
   overflow: auto;
   padding: 12%;
 }
+
+
 
 @keyframes slideInFromRight {
   0% {
